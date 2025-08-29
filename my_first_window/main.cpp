@@ -3,11 +3,13 @@
 
 #include <iostream>
 
-
 // Callback for everytime a user resizes a window
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 // Check inputs (for experimentation purpose)
 void processInput(GLFWwindow* window);
+
+// Code for Hello Triangle
+void myFirstTriangle();
 
 int main()
 {
