@@ -14,6 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "readme_img", "readme_img", 
 	ProjectSection(SolutionItems) = preProject
 		readme_img\00_firstWindow.png = readme_img\00_firstWindow.png
 		readme_img\00_triangle.png = readme_img\00_triangle.png
+		readme_img\01_my_rectangle1.png = readme_img\01_my_rectangle1.png
 		readme_img\01_my_triangle1.png = readme_img\01_my_triangle1.png
 	EndProjectSection
 EndProject

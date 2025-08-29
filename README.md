@@ -97,3 +97,17 @@ Objects that can store a large number of vertices in the GPU's memory. We use it
 
 We got a triangle! 
 ![Orange Triangle](./readme_img/01_my_triangle1.png)
+
+Now we're going to make a rectangle ... That's twice the amount of triangles!
+
+### Element Buffer Object (EBO)
+...
+
+### We made magic happen
+C'est crazy, ça!
+![Orange Rectangle](./readme_img/01_my_rectangle1.png)
+
+### Resume VBO, AVO and EBO
+VBO -> A memory array for the GPU containings the data for vertices
+AVO -> An object that register the configuration of the VBOs (which buffers are used etc) so we don't configure everytime
+EBO -> An array of indices to tell the order to use the vertices of the VBO to draw. Avoids repetitions.

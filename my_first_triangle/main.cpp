@@ -59,23 +59,49 @@ int main()
 	// NEW CODE FROM HERE TO BUILD OUR SHADER PROGRAM----------------------------------
 	// In x y and z
 	// 3 vertices for a triangle
-	float vertices[] = {
+	/*float vertices[] = {
 		-0.5f, -0.5f, 0.0f,
 		0.5f, -0.5f, 0.0f,
 		0.0f, 0.5f, 0.0f
+	};*/
+	// 6 vertices for a rectangle... but that's too much!
+	/*float vertices[] = {
+		// first triangle
+		0.5f, 0.5f, 0.0f, // top right
+		0.5f, -0.5f, 0.0f, // bottom right
+		-0.5f, 0.5f, 0.0f, // top left
+		// second triangle
+		0.5f, -0.5f, 0.0f, // bottom right
+		-0.5f, -0.5f, 0.0f, // bottom left
+		-0.5f, 0.5f, 0.0f // top left
+	};*/
+	// We use only 4 vertices for our shape with indices for repeating ones
+	float vertices[] = {
+		0.5f, 0.5f, 0.0f, // top right
+		0.5f, -0.5f, 0.0f, // bottom right
+		-0.5f, -0.5f, 0.0f, // bottom left
+		-0.5f, 0.5f, 0.0f // top left
+	};
+	unsigned int indices[] = { // note that we start from 0!
+		0, 1, 3, // first triangle
+		1, 2, 3 // second triangle
 	};
 
 	// Creates our buffer
-	unsigned int VBO, VAO;
+	unsigned int VBO, VAO, EBO;
 	// We generate our VAO
 	glGenVertexArrays(1, &VAO);
 	glGenBuffers(1, &VBO);
+	glGenBuffers(1, &EBO);
 	// Binds the VAO first, then bind and set vertex buffers, then configure vertex attributes.
 	glBindVertexArray(VAO);
 
 	// Binds the new buffer to the bugger array with the bindBuffer function
 	// GL_ARRAY_BUFFER is the type of an array of buffer object
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
+	// We also bind the EBO
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 	// 1. Our buffer array, 2. Size of what we want to add on the buffer, 3. what we want to write
 	// 4. How we want the graphics card to manage the data. Could be:
 	// GL_STREAM (set only once and used at most a few times)
@@ -141,7 +167,7 @@ int main()
 	// p6: Weird cast to define the offset of where the position data begins in the buffer. To explore later.
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
 	glEnableVertexAttribArray(0);
-	
+
 
 	// Our render loop
 	while (!glfwWindowShouldClose(window))
@@ -158,8 +184,10 @@ int main()
 		glUseProgram(shaderProgram);
 		glBindVertexArray(VAO);
 		// Draw points 0-3 from the currently bound VAO with current in-use shader.
-		glDrawArrays(GL_TRIANGLES, 0, 3);
-
+		//glDrawArrays(GL_TRIANGLES, 0, 3);
+		// Now we're drawing a rectangle
+		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+		glBindVertexArray(0);
 
 		// Check and call events and swap the buffers
 		glfwSwapBuffers(window);
