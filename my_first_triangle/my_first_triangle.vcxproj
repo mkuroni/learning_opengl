@@ -144,7 +144,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\my_first_window\glad.c" />
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="main_exercice01.cpp" />
+    <ClCompile Include="main_exercice02.cpp" />
+    <ClCompile Include="main_chapter_end.cpp" />
+    <ClCompile Include="main_exercice03.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

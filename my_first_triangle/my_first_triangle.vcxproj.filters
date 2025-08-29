@@ -18,7 +18,16 @@
     <ClCompile Include="..\my_first_window\glad.c">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="main_chapter_end.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="main_exercice03.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="main_exercice01.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="main_exercice02.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>

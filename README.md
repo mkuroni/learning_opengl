@@ -111,3 +111,22 @@ C'est crazy, ça!
 - VBO -> A memory array for the GPU containings the data for vertices
 - AVO -> An object that register the configuration of the VBOs (which buffers are used etc) so we don't configure everytime
 - EBO -> An array of indices to tell the order to use the vertices of the VBO to draw. Avoids repetitions.
+
+### Exercice 01
+Try to draw 2 triangles next to each other using glDrawArrays by adding more vertices to your data.
+
+So we get rid of the EBO since glDrawArrays needs all of the vertices specified (no indices). Then we simply draw both in our loop.
+
+### Exercice 02
+Now create the same 2 triangles using two different VAOs and VBOs for their data.
+
+I created a VAO_T1 and VAO_T2 (same for the VBOs) for each triangle. We then use them in our loop.
+
+### Exercice 03
+Create two shader programs where the second program uses a different fragment shader that outputs the color yellow.
+Draw both triangles again where one outputs the color yellow.
+
+I just copy pasted the code for the initial fragment with other values for the color. I then created another program following
+what we had done before and used it in the render loop.
+
+![Yellow and orange triangles](./readme_img/01_exercice3.png)
