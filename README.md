@@ -108,6 +108,6 @@ C'est crazy, ça!
 ![Orange Rectangle](./readme_img/01_my_rectangle1.png)
 
 ### Resume VBO, AVO and EBO
-VBO -> A memory array for the GPU containings the data for vertices
-AVO -> An object that register the configuration of the VBOs (which buffers are used etc) so we don't configure everytime
-EBO -> An array of indices to tell the order to use the vertices of the VBO to draw. Avoids repetitions.
+- VBO -> A memory array for the GPU containings the data for vertices
+- AVO -> An object that register the configuration of the VBOs (which buffers are used etc) so we don't configure everytime
+- EBO -> An array of indices to tell the order to use the vertices of the VBO to draw. Avoids repetitions.
