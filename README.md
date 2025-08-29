@@ -96,4 +96,4 @@ Objects that can store a large number of vertices in the GPU's memory. We use it
 ...
 
 We got a triangle! 
-![Orange Triangle](./readme_img/01my_triangle1.png)
+![Orange Triangle](./readme_img/01_my_triangle1.png)
